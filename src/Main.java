@@ -4,7 +4,7 @@ public class Main {
 
     static void PrintHeader(){
         System.out.println("Маша и Таня заебали уже переставлять эти ебаные цветы.");
-        System.out.println("Давайти выясним в каком порядке они стоят сейчас");
+        System.out.println("Давайте выясним в каком порядке они стоят сейчас.");
     }
 
     static int InputDays(){
@@ -24,26 +24,27 @@ public class Main {
 
 
     static void AfterThePermutations(){
-        System.out.println("После перестановок.");
+        System.out.println("После перестановок:");
     }
 
-    static char ArrayAfterThePermutations(char[] flovers, int days){
-        for (int i = 1; i < days; i++) {
+    static char[] ArrayAfterThePermutations(int days,char[] flovers){
+        for (int i = 0; i == days; i++) {
             for (int j = 0; j < flovers.length; j++) {
-                char first = flovers[1];
-                char second = flovers[2];
-                char third = flovers[3];
-
-                flovers[1] = third;
-                flovers[2] = first;
-                flovers[3] = second;
+                flovers[i] = 'h';
             }
+
         }
         return flovers;
     }
 
+    static void PrintAfterTheRearrangement(char[] floversAfter){
+        for (int i = 0; i < floversAfter.length; i++) {
+            System.out.println(floversAfter[i]);
+        }
+    }
+
     static void BeforeTheRearrangement(){
-        System.out.println("До перестановки");
+        System.out.println("До перестановки:");
     }
 
     static char[] ArrayBeforeTheRearrangement(){
@@ -53,7 +54,7 @@ public class Main {
 
     static void PrintBeforeTheRearrangement(char[] flovers){
         for (int i = 0; i < flovers.length; i++) {
-            System.out.print(flovers[i]);
+            System.out.println(flovers[i]);
         }
     }
 
@@ -69,7 +70,8 @@ public class Main {
         PrintBeforeTheRearrangement(flovers);
 
         AfterThePermutations();
-        char floversAfter = ArrayAfterThePermutations(flovers,days);
-        char[] floversAfter = ArrayAfterThePermutations();
+        char[] floversAfter;
+        floversAfter = ArrayAfterThePermutations(days, flovers);
+        PrintAfterTheRearrangement(floversAfter);
     }
 }
